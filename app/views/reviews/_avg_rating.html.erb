@@ -1,0 +1,11 @@
+<div class="star-rating" data-score= <%= @avg_rating%> ></div>
+
+<script>
+	$('.star-rating').raty({
+		path:'/assets/',
+		readOnly: true,
+		score: function(){
+			return $(this).attr('data-score');
+		}
+	});
+</script>

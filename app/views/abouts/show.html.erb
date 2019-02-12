@@ -1,0 +1,21 @@
+<section>
+	<div class="columns">
+		<div class="column ml5 mt5 ">
+			<figure class="image is-2by1">
+				<%= image_tag(@about.about_image_url(:default))%>
+			</figure>
+		</div>
+	</div>
+	<div class="columns">
+		<div class="column has-text-centered">
+			<span class="title is-1">
+				<h1><%= @about.title1%></h1>
+			</span>
+			<hr>
+			<span>
+				<h1><%=@about.description1%></h1>
+			</span>
+		</div>
+	</div>
+	
+</section>

@@ -1,0 +1,32 @@
+
+<section>
+	<div class="columns">
+		<div class="column ml5 mt5 ">
+			<figure class="image is-2by1">
+				<%= image_tag(@home.main_image_url(:default))%>
+			</figure>
+		</div>
+	</div>
+	<div class="columns">
+		<div class="column has-text-centered">
+			<span class="title is-1">
+				<h1><%= @home.title%></h1>
+			</span>
+			<hr>
+			<span>
+				<h1><%=@home.description%></h1>
+			</span>
+		</div>
+	</div>
+	<div class="columns">
+		<div class="column is-4">
+			<%= image_tag(@home.display_image_url(:thumb))%>
+		</div>
+		<div class="column is-4">
+			<%= image_tag(@home.press_image_url(:thumb))%>
+		</div>
+		<div class="column is-4">
+			<%= image_tag(@home.display_image_url(:thumb))%>
+		</div>				
+	</div>
+</section>

@@ -1,0 +1,96 @@
+
+<section>
+	<div class="columns">
+		<div class="column is-4  is-centered pt5 ">
+						<h1 class="title is-4 has-text-centered"><%=@box.title%></h1>
+
+			<div class="feature-image">
+				<%= image_tag(@box.image_url(:default))%>
+			</div>
+		</div>
+		<div class="column is-8 ">
+			<div class="content pa4 mt3 bg-white border-radius-3">
+				<h3 class="subtitle is-4">Description</h3>
+				<%= @box.description %>
+				<h3 class="subtitle is-4 pt5">Product Specs</h3>	
+				<table class="table is-narrow">
+			        <% if @box.finish %>
+			          <tr>
+			            <td class="has-text-weight-bold">Finish:</td>
+			            <td><%= @box.finish %></td>
+			          </tr>
+			        <% end %>
+
+			        <% if @box.brand %>
+			          <tr>
+			            <td class="has-text-weight-bold">Brand:</td>
+			            <td><%= @box.brand %></td>
+			          </tr>
+			        <% end %>
+
+			        <tr>
+			          <td class="has-text-weight-bold">Model:</td>
+			          <td><%= @box.model %></td>
+			        </tr>
+
+			         <tr>
+			          <td class="has-text-weight-bold">Finish:</td>
+			          <td><%= @box.finish %></td>
+			        </tr>
+		      </table>
+		      	<span>
+		        <h4 class="title is-5 has-text-right"><%= number_to_currency(@box.price) %></h4>
+        		<p class=" mb4  has-text-right">Sold by <%= @box.user.name %></p>
+        		<%= button_to 'Add to cart', line_items_path(box_id: @box), class: 'button is-warning add-to-cart' %>
+        		</span>
+			</div>
+		</div>
+	</div>
+
+<div class="columns">
+	<div class="column is-12">	
+		<div class="columns">
+			<div class="column is-5	 is-centered pt5">
+				<%= render "reviews/avg_rating"%>	
+				<p>Based on <%=  pluralize(@review.length,'review')%> </p>	
+			</div>
+		</div>	
+		<div class="columns ">
+			<div class="column is-5 is-centered ">
+				<%= render "reviews/form"%>	
+				<br><br>
+				
+				<p class="title is-6">Reviews <span class="tag"><%= @box.reviews.count%></span></p>
+				<hr>
+				<%= render @box.reviews%>
+
+			</div>
+			<div class="column is-6 is-offset-2 is-centered">
+				<div class="instrument-index-grid pt4">
+  	<% @random_box.each do |random_box|%>
+  	<div class="columns mr3 ">
+  <div class="column is-12 ">
+    <div class="instrument border-light">
+      <div class="image is-3by2	">
+      <%= link_to image_tag(random_box.image_url(:thumb)), random_box %>     
+      </div>
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%= link_to random_box.title, random_box %></h3>
+
+      <p class="has-text-gray fg pt1">Sold by <%= random_box.user.name %></p>
+
+            
+    </div>
+  </div>
+  </div>
+  </div>
+  <% end %>
+</div>				
+			</div>			
+		</div>
+		
+	</div>
+	
+</section>
+

@@ -1,0 +1,27 @@
+<div class="columns">
+	<div class="column is-1 ">
+			<%= link_to gravatar_for(@box.user),"#"%>	
+	</div>
+	<div class="column is-3 has-text-left ">
+		
+		<span class="title is-6"><%= review.rname%></span>	
+	</div>
+
+	<div class="column has-text-right">
+		<%= time_ago_in_words(review.created_at || Time.now)%>
+	</div>
+</div>
+
+<div class='star-rating' data-score=<%= review.rating %> ></div>
+
+<h3> <%= review.comment%></h3>
+<hr>
+<script>
+	$('.star-rating').raty({
+		path:'/assets/',
+		readOnly: true,
+		score: function(){
+			return $(this).attr('data-score');
+		}
+	});
+</script>
