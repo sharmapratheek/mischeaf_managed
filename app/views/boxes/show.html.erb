@@ -47,8 +47,8 @@
 		</div>
 	</div>
 
-<div class="columns">
-	<div class="column is-12">	
+<div class="columns ">
+	<div class="column is-12 ">	
 		<div class="columns">
 			<div class="column is-5	 is-centered pt5">
 				<%= render "reviews/avg_rating"%>	
@@ -65,11 +65,11 @@
 				<%= render @box.reviews%>
 
 			</div>
-			<div class="column is-6 is-offset-2 is-centered">
+			<div class="column is-6 is-offset-2 has-text-centered">
 				<div class="instrument-index-grid pt4">
   	<% @random_box.each do |random_box|%>
-  	<div class="columns mr3 ">
-  <div class="column is-12 ">
+  	<div class="columns ml4 mr3 ">
+  <div class="column is-12 has-text-centered">
     <div class="instrument border-light">
       <div class="image is-3by2	">
       <%= link_to image_tag(random_box.image_url(:thumb)), random_box %>     

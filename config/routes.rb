@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :charges
   resources :abouts
   resources :homes
   resources :carts
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   	registrations: 'registrations'
   }
   root "homes#show"
-  mount StripeEvent::Engine, at: '/payments'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

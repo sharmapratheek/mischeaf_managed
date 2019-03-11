@@ -13,9 +13,10 @@
 			<span class="f5 has-text-grey">Total:</span><%= number_to_currency(@cart.total_price)%>
 		</div>
 	</div>
-	<div class="columns">
-		<div class="column">
-			<%= render "carts/payment"%>
+	<div class="columns has-text-right">
+		<div class="column ">
+			<%#= button_to "Pay Now",charges_path,class: "button is-success"%>
+			<%= render "charges/new"%>
 		</div>
 	</div>
 </section>
